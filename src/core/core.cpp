@@ -146,9 +146,15 @@ void Core::process(const float* const* in, float** out, size_t size)
                 if (_rec_cued) {
                     _buffer.set_recording(true);
                     _rec_cued = false;
+                    _is_first_pass = true;
+                    v.set_playhead_increment(1.f);
                 }
 
                 if (!v.is_playing()) {
+                    if (_is_first_pass) {
+                        _is_first_pass = false;
+                        v.set_playhead_increment(_increment);
+                    }
                     _is_active.reset(v.idx());
                     if (_has_behavior()) _trigger_vox((v.idx() + 1) % kVoxCount);
                 }

@@ -132,6 +132,7 @@ private:
   bool _rec_cued;
   bool _loop_on;
   bool _vox_triggered;
+  bool _is_first_pass;
 };
 
 };
