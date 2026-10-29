@@ -10,7 +10,7 @@ namespace synthux {
 namespace touchb {
 
 static constexpr uint32_t kSampleRate       { 48000 };
-static constexpr uint8_t kSourceMaxSeconds  { 5 };
+static constexpr uint8_t kSourceMaxSeconds  { 2 };
 
 class SDRAMBuffer {
 public:
